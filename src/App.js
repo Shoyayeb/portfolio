@@ -1,10 +1,33 @@
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
-import Hero from './Components/Hero/Hero/Hero';
+import Footer from './Components/Footer/Footer';
+import Header from './Components/Header/Header';
+import Home from './Components/Home/Home/Home';
+import NotFound from './Components/NotFound/NotFound';
 
 function App() {
   return (
     <div className="App">
-      <Hero></Hero>
+
+      <Router>
+        <Header />
+        <Switch>
+
+          <Route exact path="/">
+            <Home />
+          </Route>
+
+          <Route exact path="/home">
+            <Home />
+          </Route>
+
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
+
+        </Switch>
+        <Footer></Footer>
+      </Router>
     </div>
   );
 }
