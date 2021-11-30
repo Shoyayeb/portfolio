@@ -2,22 +2,20 @@
 import React, { useEffect } from 'react';
 import Bounce from 'react-reveal/Zoom';
 import TextTransition, { presets } from "react-text-transition";
-import Particles from 'react-tsparticles';
 import resume from '../../extra-files/resume.pdf';
 import shafin from '../../Images/shafin.png';
 
 const texts = [
     "Shafin", "a Web Developer",
 ];
-const particlesInit = (main) => {
-    console.log(main);
+// const particlesInit = (main) => {
+//     console.log(main);
+//     // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
+// };
 
-    // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-};
-
-const particlesLoaded = (container) => {
-    console.log(container);
-};
+// const particlesLoaded = (container) => {
+//     console.log(container);
+// };
 const Banner = () => {
     const [index, setIndex] = React.useState(0);
     useEffect(() => {
@@ -29,7 +27,8 @@ const Banner = () => {
     }, []);
     return (
         <div>
-            <Particles
+            <div>
+                {/* <Particles
                 id="tsparticles"
                 init={particlesInit}
                 loaded={particlesLoaded}
@@ -143,12 +142,14 @@ const Banner = () => {
                     },
                     retina_detect: true
                 }}
-            />
+            /> */}
+            </div>
+
             <main class="dark:bg-gray-800 font-mono bg-white  h-screen">
                 <div class="flex relative z-20 items-center">
                     <div class="container mx-auto px-6 flex flex-col justify-between items-center relative py-4">
                         <div class="flex flex-col">
-                            <img src={shafin} class="rounded-full w-28 mx-auto" alt="profile" />
+                            <img src={shafin} class="rounded-full w-28 md:w-40 mx-auto" alt="profile" />
                             <p class="text-3xl my-6 text-center dark:text-white md:block hidden">
                                 I am <TextTransition
                                     text={texts[index % texts.length]}

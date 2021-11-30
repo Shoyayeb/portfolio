@@ -1,10 +1,11 @@
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import Banner from './Components/Banner/Banner';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import NotFound from './Components/NotFound/NotFound';
-
+import Skills from './Components/Skills/Skills';
 
 function App() {
   return (
@@ -17,13 +18,16 @@ function App() {
 
           <Route exact path="/">
             <Banner />
+            <Skills />
           </Route>
 
           <Route path="/home">
             <Banner />
+            <Skills />
           </Route>
           <Route path="/portfolio">
             <Banner />
+            <Skills />
           </Route>
 
           <Route path="*">
