@@ -1,15 +1,22 @@
-import React from 'react';
-import Slide from 'react-reveal/Slide';
 
+import React, { useEffect } from 'react';
+const texts = [
+    "Shafin", "a Web Developer",
+];
 const Footer = () => {
+    const [index, setIndex] = React.useState(0);
+    useEffect(() => {
+        const intervalId = setInterval(() =>
+            setIndex(index => index + 1),
+            3000 // every 3 seconds
+        );
+        return () => clearTimeout(intervalId);
+    }, []);
     return (
-        <div className="hidden">
+
+        <div className="">
             <p>footer</p>
-            <h2>
-                <Slide left>
-                    Building digital products, brands, and experiences.
-                </Slide>
-            </h2>
+
         </div>
     );
 };

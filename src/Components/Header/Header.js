@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { FiMenu } from 'react-icons/fi';
 import { SiMicrosoftoutlook } from "react-icons/si";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [hidden, setHidden] = useState(true)
@@ -16,9 +17,9 @@ const Header = () => {
     return (
 
         <div>
-            <nav class="bg-white dark:bg-gray-800  shadow ">
-                <div class="max-w-7xl mx-auto px-4">
-                    <div class="flex items-center justify-between h-16">
+            <nav class="bg-white dark:bg-gray-800 shadow ">
+                <div class="max-w-7xl mx-auto px-4 sticky">
+                    <div class="flex items-center justify-between h-16 sticky">
                         <div class="w-full justify-between flex items-center">
                             <a class="animate-pulse hover:opacity-50 flex-shrink-0 md:mx-0 mx-auto text-xl" href="mailto:sa.fine@outlook.com">
                                 <SiMicrosoftoutlook className=" inline mx-2 text-blue-500"></SiMicrosoftoutlook>
@@ -26,18 +27,18 @@ const Header = () => {
                             </a>
                             <div class="hidden md:block">
                                 <div class="ml-10 flex items-baseline space-x-4">
-                                    <a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
-                                        Home
-                                    </a>
-                                    <a class="text-gray-300 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
-                                        Gallery
-                                    </a>
-                                    <a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
-                                        Content
-                                    </a>
-                                    <a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
+                                    <Link class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" to="/">
+                                        Profile
+                                    </Link>
+                                    <Link class="text-gray-300 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" to="/">
+                                        Skills
+                                    </Link>
+                                    <Link class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" to="/notfound">
+                                        Projects
+                                    </Link>
+                                    <Link class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" to="/home">
                                         Contact
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
