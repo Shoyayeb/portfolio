@@ -17,7 +17,7 @@ const particlesLoaded = (container) => {
 };
 const Banner = () => {
     const texts = [
-        "Shafin", "a Web Developer",
+        "Shafin", " a Web Developer",
     ];
     const [index, setIndex] = React.useState(0);
     useEffect(() => {
@@ -34,7 +34,9 @@ const Banner = () => {
                     id="tsparticles"
                     init={particlesInit}
                     loaded={particlesLoaded}
+                    className="hidden md:block"
                     options={{
+                        fpsLimit: 30,
                         particles: {
                             number: {
                                 value: 8,
@@ -160,8 +162,8 @@ const Banner = () => {
                                     className={"text-red-400"}
                                 />
                             </p>
-                            <p className="text-2xl my-6 text-center dark:text-white md:hidden block">
-                                I am <TextTransition
+                            <p className="text-2xl my-6 text-center dark:text-white md:hidden flex justify-center">
+                                I am  <TextTransition
                                     text={texts[index % texts.length]}
                                     springConfig={presets.wobbly}
                                     inline={true}
