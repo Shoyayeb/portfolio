@@ -1,4 +1,6 @@
-import React from 'react';
+import { BadgeCheckIcon, ChipIcon } from "@heroicons/react/solid";
+import React, { useEffect } from 'react';
+import TextTransition, { presets } from "react-text-transition";
 import express from '../../Images/back/express.svg';
 import mongodb from '../../Images/back/mongodb.svg';
 import nodejs from '../../Images/back/nodejs.svg';
@@ -54,58 +56,128 @@ const Skills = () => {
         heroku,
         vscode,
     ]
+    const skillText = [
+        "HTML5",
+        "CSS3",
+        "Tailwind",
+        "Bootstrap",
+        "JavaScript",
+        "React",
+        "Node.js",
+        "Express.js",
+        "NoSQL",
+        "Firebase",
+    ]
+    const [index, setIndex] = React.useState(0);
+    useEffect(() => {
+        const intervalId = setInterval(() =>
+            setIndex(index => index + 1),
+            2000 // every 3 seconds
+        );
+        return () => clearTimeout(intervalId);
+    }, []);
     return (
+
         <div>
-            <p className="max-w-3xl text-5xl md:text-6xl font-bold mx-auto dark:text-white text-gray-800 text-center py-2">Web Development Skills</p>
-            {/* <div class="bg-white dark:bg-gray-800 flex justify-center items-center">
-                <div class="text-start md:max-w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 ">
-                    <h2 class="text-3xl font-extrabold text-black dark:text-white sm:text-4xl">
-                        <span class=" text-yellow-400">
-                            Front End
-                        </span>
-                    </h2>
-                </div>
-                <div className="md:max-w-1/2 flex">
-                    {frontEndSkill.map((skill) => (
-                        <img src={skill} className="w-10 h-8 hover:h-10" alt="skill" />
-                    ))}
-                </div>
-            </div>
-            <div class="bg-white dark:bg-gray-800 flex justify-center items-center">
-                <div class="text-start md:max-w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 ">
-                    <h2 class="text-3xl font-extrabold text-black dark:text-white sm:text-4xl">
-                        <span class=" text-red-400">
-                            Back End
-                        </span>
-                    </h2>
-                </div>
-                <div className="md:max-w-1/2 flex">
-                    {backEndSkill.map((skill) => (
-                        <img src={skill} className="w-10 h-8 hover:h-10" alt="skill" />
-                    ))}
-                </div>
-            </div>
-            <div class="bg-white dark:bg-gray-800 flex justify-center items-center">
-                <div class="text-start md:max-w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 ">
-                    <h2 class="text-3xl font-extrabold text-black dark:text-white sm:text-4xl">
-                        <span class=" text-red-400">
-                            Back End
-                        </span>
-                    </h2>
-                </div>
-                <div className="md:max-w-1/2 flex">
-                    {tools.map((skill) => (
-                        <img src={skill} className="w-10 h-8 hover:h-10" alt="skill" />
-                    ))}
-                </div>
-            </div> */}
-            <div class="bg-white dark:bg-gray-800 flex justify-center items-center md:max-w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 ">
-                <div className="md:max-w-1/2 flex">
+            <p className="max-w-3xl text-3xl md:text-6xl font-bold mx-auto dark:text-white text-gray-800 text-center py-2">Skills and Technologies</p>
+            <div class="bg-white dark:bg-gray-800 hidden md:flex justify-center items-center md:max-w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 ">
+                <div className="md:max-w-1/2 hidden md:flex">
                     {allSkills.map((skill) => (
                         <img src={skill} className="w-10 h-8 cursor-pointer hover:shadow-sm" alt="skill" />
                     ))}
                 </div>
             </div>
+            {/* <div className="md:flex justify-around">
+                <div class="bg-white dark:bg-gray-800 flex flex-col">
+                    <div class="text-start md:max-w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 ">
+                        <h2 class="text-3xl font-extrabold dark:text-white sm:text-4xl">
+                            <span class=" text-yellow-400">
+                                Front End
+                            </span>
+                        </h2>
+                    </div>
+                    <div className="md:max-w-1/2 flex">
+                        {frontEndSkill.map((skill) => (
+                            <img src={skill} className="w-10 h-8 hover:h-10" alt="skill" />
+                        ))}
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 flex flex-col">
+                    <div class="text-start md:max-w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 ">
+                        <h2 class="text-3xl font-extrabold dark:text-white sm:text-4xl">
+                            <span class=" text-red-400">
+                                Back End
+                            </span>
+                        </h2>
+                    </div>
+                    <div className="md:max-w-1/2 flex">
+                        {backEndSkill.map((skill) => (
+                            <img src={skill} className="w-10 h-8 hover:h-10" alt="skill" />
+                        ))}
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 flex flex-col">
+                    <div class="text-start md:max-w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 ">
+                        <h2 class="text-3xl font-extrabold dark:text-white sm:text-4xl">
+                            <span class=" text-yellow-400">
+                                Tools
+                            </span>
+                        </h2>
+                    </div>
+                    <div className="md:max-w-1/2 flex">
+                        {tools.map((skill) => (
+                            <img src={skill} className="w-10 h-8 hover:h-10" alt="skill" />
+                        ))}
+                    </div>
+                </div>
+
+            </div> */}
+            <div>
+
+                <p className="text-3xl my-6 text-center dark:text-white md:block hidden">
+                    I am Expert at <TextTransition
+                        text={skillText[index % skillText.length]}
+                        springConfig={presets.wobbly}
+                        inline={true}
+                        className={"text-red-400"}
+                    />
+                </p>
+                <p className="text-2xl my-6 text-center dark:text-white md:hidden block">
+                    <TextTransition
+                        text={skillText[index % skillText.length]}
+                        springConfig={presets.wobbly}
+                        inline={true}
+                        className={"text-center"}
+                    />
+                </p>
+            </div>
+            <section id="skills">
+                <div className="container px-5 py-10 mx-auto">
+                    <div className="text-center mb-20">
+                        <ChipIcon className="w-10 inline-block mb-4" />
+                        <h1 className="sm:text-4xl text-3xl font-medium title-font text-white mb-4">
+                            Skills &amp; Technologies
+                        </h1>
+                        <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi sit
+                            ipsa delectus eum quo voluptas aspernatur accusantium distinctio
+                            possimus est.
+                        </p>
+                    </div>
+                    <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 mx-2">
+                        {skillText.map((skill) => (
+                            <div key={skill} className="p-2 sm:w-1/2 w-full">
+                                <div className="bg-gray-800 rounded flex p-4 h-full items-center">
+                                    <BadgeCheckIcon className="text-green-400 w-6 h-6 flex-shrink-0 mr-4" />
+                                    <span className="title-font font-medium text-white">
+                                        {skill}
+                                    </span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
         </div>
 
     );

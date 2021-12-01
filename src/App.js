@@ -5,6 +5,7 @@ import Banner from './Components/Banner/Banner';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import NotFound from './Components/NotFound/NotFound';
+import Projects from './Components/projects/Projects';
 import Skills from './Components/Skills/Skills';
 
 function App() {
@@ -19,15 +20,18 @@ function App() {
           <Route exact path="/">
             <Banner />
             <Skills />
+            <Projects />
           </Route>
 
           <Route path="/home">
             <Banner />
             <Skills />
+            <Projects />
           </Route>
           <Route path="/portfolio">
             <Banner />
             <Skills />
+            <Projects />
           </Route>
 
           <Route path="*">
