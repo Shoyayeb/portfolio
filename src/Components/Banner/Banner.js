@@ -145,12 +145,12 @@ const Banner = () => {
             /> */}
             </div>
 
-            <main class="dark:bg-gray-800 font-mono bg-white  h-screen">
-                <div class="flex relative z-20 items-center">
-                    <div class="container mx-auto px-6 flex flex-col justify-between items-center relative py-4">
-                        <div class="flex flex-col">
-                            <img src={shafin} class="rounded-full w-28 md:w-40 mx-auto" alt="profile" />
-                            <p class="text-3xl my-6 text-center dark:text-white md:block hidden">
+            <main className="dark:bg-gray-800 font-mono bg-white  h-screen">
+                <div className="flex relative z-20 items-center">
+                    <div className="container mx-auto px-6 flex flex-col justify-between items-center relative py-4">
+                        <div className="flex flex-col">
+                            <img src={shafin} className="rounded-full w-28 md:w-40 mx-auto" alt="profile" />
+                            <p className="text-3xl my-6 text-center dark:text-white md:block hidden">
                                 I am <TextTransition
                                     text={texts[index % texts.length]}
                                     springConfig={presets.wobbly}
@@ -158,7 +158,7 @@ const Banner = () => {
                                     className={"text-red-400"}
                                 />
                             </p>
-                            <p class="text-3xl my-6 text-center dark:text-white md:hidden block">
+                            <p className="text-3xl my-6 text-center dark:text-white md:hidden block">
                                 I am <TextTransition
                                     text={texts[index % texts.length]}
                                     springConfig={presets.wobbly}
@@ -166,15 +166,15 @@ const Banner = () => {
                                     className={"text-center"}
                                 />
                             </p>
-                            <h2 class="max-w-3xl text-5xl md:text-6xl font-bold mx-auto dark:text-white text-gray-800 text-center py-2">
+                            <h2 className="max-w-3xl text-5xl md:text-6xl font-bold mx-auto dark:text-white text-gray-800 text-center py-2">
 
                                 <Bounce bottom>
                                     MERN Stack Developer
                                 </Bounce>
                             </h2>
-                            <div class="flex items-center justify-center mt-4">
+                            <div className="flex items-center justify-center mt-4">
                                 <a href={resume} target="_blank" rel="noreferrer"
-                                    download="Resume-for-Soyayeb.pdf" class="uppercase py-2 my-2 px-4 md:mt-16 bg-transparent dark:text-gray-800 dark:bg-white hover:dark:bg-gray-100 border-2 border-gray-800 text-gray-800 dark:text-white hover:bg-gray-800 hover:text-white text-md">
+                                    download="Resume-for-Soyayeb.pdf" className="uppercase py-2 my-2 px-4 md:mt-16 bg-transparent dark:text-gray-800 dark:bg-white hover:dark:bg-gray-100 border-2 border-gray-800 text-gray-800 dark:text-white hover:bg-gray-800 hover:text-white text-md">
                                     Download Resume
                                 </a>
                             </div>
