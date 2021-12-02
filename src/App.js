@@ -7,6 +7,7 @@ import Header from './Components/Header/Header';
 import NotFound from './Components/NotFound/NotFound';
 import Projects from './Components/projects/Projects';
 import Skills from './Components/Skills/Skills';
+import Contact from './Components/Contact/Contact';
 
 function App() {
   return (
@@ -21,17 +22,22 @@ function App() {
             <Banner />
             <Skills />
             <Projects />
+            <Contact />
           </Route>
 
           <Route path="/home">
             <Banner />
             <Skills />
             <Projects />
+            <Contact />
+
           </Route>
           <Route path="/portfolio">
             <Banner />
             <Skills />
             <Projects />
+            <Contact />
+
           </Route>
 
           <Route path="*">

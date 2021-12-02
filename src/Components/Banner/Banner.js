@@ -1,10 +1,11 @@
 // import { FiMail } from '@react-icons/all-files/fai/FiMail';
 import React, { useEffect } from 'react';
-import Bounce from 'react-reveal/Zoom';
+import Fade from 'react-reveal/Fade';
 import TextTransition, { presets } from "react-text-transition";
 import Particles from 'react-tsparticles';
 import resume from '../../extra-files/resume.pdf';
 import shafin from '../../Images/shafin.png';
+
 
 
 const particlesInit = (main) => {
@@ -150,8 +151,8 @@ const Banner = () => {
             </div>
 
             <main className="dark:bg-gray-800 font-mono bg-white  h-screen">
-                <div className="flex relative z-20 items-center">
-                    <div className="container mx-auto px-6 flex flex-col justify-between items-center relative py-4">
+                <div className="flex  z-20 items-center">
+                    <div className="container mx-auto px-6 flex flex-col justify-between items-center  py-4">
                         <div className="flex flex-col">
                             <img src={shafin} className="rounded-full w-28 md:w-40 mx-auto" alt="profile" />
                             <p className="text-3xl my-6 text-center dark:text-white md:block hidden">
@@ -159,21 +160,23 @@ const Banner = () => {
                                     text={texts[index % texts.length]}
                                     springConfig={presets.wobbly}
                                     inline={true}
+                                    direction="down"
                                     className={"text-red-400"}
                                 />
                             </p>
-                            <p className="text-2xl my-6 text-center dark:text-white md:hidden flex justify-center">
-                                I am  <TextTransition
+                            <span className="text-2xl my-6 text-center dark:text-white md:hidden flex justify-center gap-2">
+                                <p>I am</p>
+                                <TextTransition
                                     text={texts[index % texts.length]}
-                                    springConfig={presets.wobbly}
                                     inline={true}
-                                    className={"text-center"}
+                                    noOverflow={true}
+                                    direction="down"
                                 />
-                            </p>
+                            </span>
                             <h2 className="max-w-3xl text-3xl md:text-6xl font-bold mx-auto dark:text-white text-gray-800 text-center py-2">
-                                <Bounce bottom>
+                                <Fade bottom>
                                     MERN Stack Developer
-                                </Bounce>
+                                </Fade>
                             </h2>
                             <div className="flex items-center justify-center mt-4">
                                 <a href={resume} target="_blank" rel="noreferrer"
