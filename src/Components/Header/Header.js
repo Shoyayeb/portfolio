@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import { FiMenu } from 'react-icons/fi';
 import { SiMicrosoftoutlook } from "react-icons/si";
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+
 
 const Header = () => {
     const [hidden, setHidden] = useState(true)
@@ -17,7 +18,7 @@ const Header = () => {
     return (
 
         <div>
-            <nav className="bg-white dark:bg-gray-800 shadow ">
+            <nav className="bg-white dark:bg-gray-800 shadow">
                 <div className="max-w-7xl mx-auto px-4 sticky">
                     <div className="flex items-center justify-between h-16 sticky">
                         <div className="w-full justify-between flex items-center">
@@ -27,18 +28,18 @@ const Header = () => {
                             </a>
                             <div className="hidden md:block">
                                 <div className="ml-10 flex items-baseline space-x-4">
-                                    <Link className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" to="/">
+                                    <HashLink className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" to="/home#home">
                                         Profile
-                                    </Link>
-                                    <Link className="text-gray-300 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" to="/">
+                                    </HashLink>
+                                    <HashLink className="text-gray-300 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" to="/home#skills">
                                         Skills
-                                    </Link>
-                                    <Link className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" to="/notfound">
+                                    </HashLink>
+                                    <HashLink className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" to="/home#projects">
                                         Projects
-                                    </Link>
-                                    <Link className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" to="/home">
+                                    </HashLink>
+                                    <HashLink className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" to="/home#contact">
                                         Contact
-                                    </Link>
+                                    </HashLink>
                                 </div>
                             </div>
                         </div>

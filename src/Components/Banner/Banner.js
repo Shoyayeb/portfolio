@@ -29,7 +29,7 @@ const Banner = () => {
         return () => clearTimeout(intervalId);
     }, []);
     return (
-        <div>
+        <div id="home">
             <div>
                 <Particles
                     id="tsparticles"
@@ -150,18 +150,18 @@ const Banner = () => {
                 />
             </div>
 
-            <main className="dark:bg-gray-800 font-mono bg-white  h-screen">
+            <main className="dark:bg-gray-800 font-mono bg-white h-screen">
                 <div className="flex  z-20 items-center">
                     <div className="container mx-auto px-6 flex flex-col justify-between items-center  py-4">
                         <div className="flex flex-col">
-                            <img src={shafin} className="rounded-full w-28 md:w-40 mx-auto" alt="profile" />
+                            <img src={shafin} className="rounded-full w-2/3 md:w-40 mx-auto" alt="profile" />
                             <p className="text-3xl my-6 text-center dark:text-white md:block hidden">
                                 I am <TextTransition
                                     text={texts[index % texts.length]}
                                     springConfig={presets.wobbly}
                                     inline={true}
                                     direction="down"
-                                    className={"text-red-400"}
+                                    className="text-red-400"
                                 />
                             </p>
                             <span className="text-2xl my-6 text-center dark:text-white md:hidden flex justify-center gap-2">
