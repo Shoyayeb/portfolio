@@ -12,12 +12,11 @@ const Projects = () => {
         dots: true,
         infinite: true,
         lazyLoad: true,
+        autoplay: true,
+        pauseOnHover: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true,
         autoplaySpeed: 4500,
-        pauseOnHover: true,
-        centerPadding: "60px",
 
     };
     return (
@@ -33,33 +32,20 @@ const Projects = () => {
                     </p>
                 </div>
                 <Slider {...settings}>
-
-                    {/* niche */}
-
                     {
                         projectsData.map((project) => (
-                            <div class="flex max-w-xl bg-white shadow-lg rounded-lg overflow-hidden">
+                            <div class="flex h-auto md:max-w-lg bg-white shadow-lg rounded-lg overflow-hidden">
                                 <div class=" bg-cover bg-landscape">
                                     <img src={project.img} alt="" srcset="" />
                                 </div>
                                 <div class="m-4">
-                                    <h1 class="text-gray-900 font-bold text-2xl">
+                                    <a href={project.link} target="_blank" rel="noreferrer" class="text-gray-900 font-bold text-2xl underline hover:text-purple-400">
                                         {project.name}
-                                    </h1>
-                                    {/* <ul class="list-disc text-left">
-                                        <li>
-                                            {project.feature1}
-                                        </li>
-                                        <li>
-                                            {project.feature2}
-                                        </li>
-                                        <li>
-                                            {project.feature3}
-                                        </li>
-                                    </ul> */}
-
-
-
+                                    </a>
+                                    <div className="flex justify-around underline mt-2">
+                                        <a className="hover:text-purple-400" href={project.client}>Client Side Code</a>
+                                        <a className="hover:text-purple-400" href={project.server}>Server Side Code</a>
+                                    </div>
                                     <ul class="text-sm text-black dark:text-white w-full mt-6 mb-6">
                                         <li class="mb-3 flex items-center space-x-2">
                                             <FiPlusCircle className="text-green-500" />
@@ -68,21 +54,21 @@ const Projects = () => {
                                             </p>
                                         </li>
                                         <li class="mb-3 flex items-center space-x-2">
-                                            <FiPlusCircle className="text-green-500" />
+                                            <FiPlusCircle className="text-green-500 " />
                                             <p>
                                                 {project.feature2}
                                             </p>
                                         </li>
                                         <li class="mb-3 flex items-center space-x-2">
-                                            <FiPlusCircle className="text-green-500 text-opacity-100	" />
+                                            <FiPlusCircle className="text-green-500" />
                                             <p>
                                                 {project.feature3}
                                             </p>
                                         </li>
                                     </ul>
-                                    <div class="flex item-center justify-between mt-3 flex-wrap gap-2">
+                                    <div class="flex item-center justify-between mt-3 flex-wrap gap-1">
                                         {project.tags.map((tag) => (
-                                            <span class="px-3 py-2  text-base rounded-full text-gray-800  bg-yellow-200 ">
+                                            <span class="px-2 py-2 text-xs rounded-full text-gray-800  bg-red-200 ">
                                                 {tag}
                                             </span>
                                         ))}
@@ -91,7 +77,6 @@ const Projects = () => {
                             </div>
                         ))
                     }
-
                 </Slider>
             </div>
 

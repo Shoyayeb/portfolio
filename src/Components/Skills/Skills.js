@@ -3,8 +3,7 @@ import React, { useEffect } from 'react';
 import TextTransition, { presets } from "react-text-transition";
 import express from '../../Images/back/express.svg';
 import mongodb from '../../Images/back/mongodb.svg';
-import nodejs from '../../Images/back/nodejs.svg'; import nicheGif from '../../Images/projects/niche.gif';
-import tourismGif from '../../Images/projects/tourism.gif';
+import nodejs from '../../Images/back/nodejs.svg';
 import bootstrap from '../../Images/front/bootstrap.svg';
 import css3 from '../../Images/front/css3.svg';
 import html5 from '../../Images/front/html5.svg';
@@ -19,27 +18,6 @@ import heroku from '../../Images/tools/heroku.svg';
 import vscode from '../../Images/tools/vscode.svg';
 
 const Skills = () => {
-    const frontEndSkill = [
-        html5,
-        css3,
-        tailwindcss,
-        materialui,
-        bootstrap,
-        javascript,
-        react,
-    ]
-    const backEndSkill = [
-        nodejs,
-        express,
-        mongodb,
-    ]
-    const tools = [
-        git,
-        firebase,
-        chrome,
-        heroku,
-        vscode,
-    ]
     const allSkills = [
         html5,
         css3,
@@ -56,20 +34,6 @@ const Skills = () => {
         chrome,
         heroku,
         vscode,
-    ]
-    const frontEndText = [
-        "HTML5",
-        "CSS3",
-        "Tailwind",
-        "Bootstrap",
-        "JavaScript",
-        "React",
-    ]
-    const backEndText = [
-        "Node.js",
-        "Express.js",
-        "NoSQL",
-        "Firebase",
     ]
     const skillText = [
         "HTML5",

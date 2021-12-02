@@ -56,18 +56,18 @@ const Header = () => {
                 </div>
                 {!hidden ? <div className="md:hidden">
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <a className="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="/#">
+                        <HashLink className="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium" to="/home#home">
                             Home
-                        </a>
-                        <a className="text-gray-300 dark:text-white block px-3 py-2 rounded-md text-base font-medium" href="/#">
-                            Gallery
-                        </a>
-                        <a className="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="/#">
-                            Content
-                        </a>
-                        <a className="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="/#">
+                        </HashLink>
+                        <HashLink className="text-gray-300 dark:text-white block px-3 py-2 rounded-md text-base font-medium" to="/home#skills">
+                            Skills
+                        </HashLink>
+                        <HashLink className="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium" to="/home#projects">
+                            Projects
+                        </HashLink>
+                        <HashLink className="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium" to="/home#contact">
                             Contact
-                        </a>
+                        </HashLink>
                     </div>
                 </div> : ''}
             </nav>
