@@ -35,26 +35,26 @@ const Banner = () => {
                     id="tsparticles"
                     init={particlesInit}
                     loaded={particlesLoaded}
-                    className=""
+                    className="z-0"
                     options={{
                         fpsLimit: 30,
                         particles: {
                             number: {
-                                value: 5,
+                                value: 15,
                                 density: {
                                     enable: false,
                                     value_area: 800
                                 },
-                                limit: 30,
+                                limit: 20,
                             },
                             color: {
-                                value: "#cdcdcd"
+                                value: "#79d279"
                             },
                             shape: {
                                 type: "circle",
                                 stroke: {
                                     width: 1,
-                                    color: "#cdcdcd"
+                                    color: "#79d279"
                                 },
                                 polygon: {
                                     nb_sides: 5
@@ -66,8 +66,8 @@ const Banner = () => {
                                 }
                             },
                             opacity: {
-                                value: 1,
-                                random: false,
+                                value: 0.7,
+                                random: true,
                                 anim: {
                                     enable: false,
                                     speed: 1,
@@ -86,16 +86,16 @@ const Banner = () => {
                                 }
                             },
                             line_linked: {
-                                enable: false,
-                                distance: 1,
-                                color: "#ffffff",
-                                opacity: 0,
+                                enable: true,
+                                distance: 120,
+                                color: "#d9f2d9",
+                                opacity: 0.5,
                                 width: 1
                             },
                             move: {
                                 enable: true,
-                                speed: 3,
-                                direction: "bottom-right",
+                                speed: 2,
+                                direction: "none",
                                 random: false,
                                 straight: false,
                                 out_mode: "out",
@@ -111,8 +111,8 @@ const Banner = () => {
                             detect_on: "window",
                             events: {
                                 onhover: {
-                                    enable: false,
-                                    mode: "bubble"
+                                    enable: true,
+                                    mode: "grab"
                                 },
                                 onclick: {
                                     enable: true,
@@ -122,27 +122,27 @@ const Banner = () => {
                             },
                             modes: {
                                 grab: {
-                                    distance: 36.54347455356053,
+                                    distance: 109,
                                     line_linked: {
-                                        opacity: 1
+                                        opacity: .51
                                     }
                                 },
                                 bubble: {
-                                    distance: 121.81158184520176,
-                                    size: 10,
+                                    distance: 400,
+                                    size: 40,
                                     duration: 2,
-                                    opacity: 0.3004685685514977,
+                                    opacity: 8,
                                     speed: 3
                                 },
                                 repulse: {
-                                    distance: 20,
+                                    distance: 200,
                                     duration: 0.4
                                 },
                                 push: {
-                                    particles_nb: 3
+                                    particles_nb: 4
                                 },
                                 remove: {
-                                    particles_nb: 3
+                                    particles_nb: 2
                                 }
                             }
                         },
@@ -154,14 +154,14 @@ const Banner = () => {
                 <div className="flex  z-20 items-center">
                     <div className="container mx-auto px-6 flex flex-col justify-between items-center  py-4">
                         <div className="flex flex-col">
-                            <img src={shafin} className="rounded-full w-2/3 md:w-2/6 mx-auto" alt="profile" />
+                            <img src={shafin} className="z-20 rounded-full w-2/3 md:w-2/6 mx-auto" alt="profile" />
                             <p className="text-3xl my-6 text-center dark:text-white md:block hidden">
                                 I am <TextTransition
                                     text={texts[index % texts.length]}
                                     springConfig={presets.wobbly}
                                     inline={true}
                                     direction="down"
-                                    className="text-red-400"
+                                    className="text-green-500"
                                 />
                             </p>
                             <span className="text-3xl my-6 text-center md:hidden ">

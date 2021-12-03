@@ -60,7 +60,7 @@ const Skills = () => {
 
         <div id="skills">
             <p className="max-w-3xl text-3xl md:text-6xl font-bold mx-auto dark:text-white text-gray-800 text-center py-2">Skills and Technologies</p>
-            <div class="bg-white dark:bg-gray-800 hidden md:flex justify-center items-center md:max-w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 ">
+            <div className="bg-white dark:bg-gray-800 hidden md:flex justify-center items-center md:max-w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 ">
                 <div className="md:max-w-1/2 hidden md:flex">
                     {allSkills.map((skill) => (
                         <img src={skill} className="w-10 h-8 cursor-pointer hover:shadow-sm" alt="skill" />
