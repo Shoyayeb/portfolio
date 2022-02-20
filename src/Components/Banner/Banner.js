@@ -1,12 +1,9 @@
-// import { FiMail } from '@react-icons/all-files/fai/FiMail';
 import React, { useEffect } from 'react';
 import Fade from 'react-reveal/Fade';
 import TextTransition, { presets } from "react-text-transition";
 import Particles from 'react-tsparticles';
 import resume from '../../extra-files/resume.pdf';
-import shafin from '../../Images/shafin.png';
-
-
+import profileImage from '../../Images/profile-image.jpg';
 
 const particlesInit = (main) => {
     console.log(main);
@@ -154,7 +151,7 @@ const Banner = () => {
                 <div className="flex  z-20 items-center">
                     <div className="container mx-auto px-6 flex flex-col justify-between items-center  py-4">
                         <div className="flex flex-col">
-                            <img src={shafin} className="z-20 rounded-full w-2/3 md:w-2/6 mx-auto" alt="profile" />
+                            <img src={profileImage} className="z-20 rounded-full md:w-3/12 w-7/12 mx-auto" alt="profile" />
                             <p className="text-3xl my-6 text-center dark:text-white md:block hidden">
                                 I am <TextTransition
                                     text={texts[index % texts.length]}
