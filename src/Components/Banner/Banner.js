@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
-import Fade from 'react-reveal/Fade';
 import TextTransition, { presets } from "react-text-transition";
 import Particles from 'react-tsparticles';
 import resume from '../../extra-files/resume.pdf';
 import profileImage from '../../Images/profile-image.jpg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const particlesInit = (main) => {
     console.log(main);
@@ -15,7 +17,7 @@ const particlesLoaded = (container) => {
 };
 const Banner = () => {
     const texts = [
-        "Shafin", " a Web Developer",
+        "Soyayeb Hasan Shafin", " a Web Developer", "a hard worker", "a React Develoeper", "a Night Owl"
     ];
     const [index, setIndex] = React.useState(0);
     useEffect(() => {
@@ -25,6 +27,108 @@ const Banner = () => {
         );
         return () => clearTimeout(intervalId);
     }, []);
+    const options = {
+        fpsLimit: 25,
+        particles: {
+            number: {
+                value: 25,
+                density: {
+                    enable: false,
+                    value_area: 400
+                },
+                limit: 30,
+            },
+            color: {
+                value: "#79d279"
+            },
+            shape: {
+                type: "circle",
+                stroke: {
+                    width: 1,
+                    color: "#79d279"
+                },
+                polygon: {
+                    nb_sides: 3
+                },
+                image: {
+                    src: "img/github.svg",
+                    width: 100,
+                    height: 100
+                }
+            },
+            opacity: {
+                value: 1,
+                random: false,
+                anim: {
+                    enable: false,
+                    speed: 1,
+                    opacity_min: 0.1,
+                    sync: false
+                }
+            },
+            size: {
+                value: 2,
+                random: false,
+                anim: {
+                    enable: false,
+                    speed: 40,
+                    size_min: 0.1,
+                    sync: false
+                }
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: "#8bff59",
+                opacity: 0.8,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: "none",
+                random: false,
+                straight: false,
+                out_mode: "out",
+                bounce: false,
+                attract: {
+                    enable: false,
+                    rotateX: 600,
+                    rotateY: 1200
+                }
+            }
+        },
+        interactivity: {
+            detect_on: "window",
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: "grab"
+                },
+                onclick: {
+                    enable: false,
+                    mode: "push"
+                },
+                resize: true
+            },
+            modes: {
+                grab: {
+                    distance: 150,
+                    line_linked: {
+                        opacity: 1
+                    }
+                },
+                push: {
+                    particles_nb: 6
+                },
+                remove: {
+                    particles_nb: 2
+                }
+            }
+        },
+        retina_detect: true
+    };
+
     return (
         <div id="home">
             <div>
@@ -33,118 +137,7 @@ const Banner = () => {
                     init={particlesInit}
                     loaded={particlesLoaded}
                     className="z-0"
-                    options={{
-                        fpsLimit: 30,
-                        particles: {
-                            number: {
-                                value: 15,
-                                density: {
-                                    enable: false,
-                                    value_area: 800
-                                },
-                                limit: 20,
-                            },
-                            color: {
-                                value: "#79d279"
-                            },
-                            shape: {
-                                type: "circle",
-                                stroke: {
-                                    width: 1,
-                                    color: "#79d279"
-                                },
-                                polygon: {
-                                    nb_sides: 5
-                                },
-                                image: {
-                                    src: "img/github.svg",
-                                    width: 100,
-                                    height: 100
-                                }
-                            },
-                            opacity: {
-                                value: 0.7,
-                                random: true,
-                                anim: {
-                                    enable: false,
-                                    speed: 1,
-                                    opacity_min: 0.1,
-                                    sync: false
-                                }
-                            },
-                            size: {
-                                value: 3,
-                                random: true,
-                                anim: {
-                                    enable: false,
-                                    speed: 40,
-                                    size_min: 0.1,
-                                    sync: false
-                                }
-                            },
-                            line_linked: {
-                                enable: true,
-                                distance: 120,
-                                color: "#d9f2d9",
-                                opacity: 0.5,
-                                width: 1
-                            },
-                            move: {
-                                enable: true,
-                                speed: 2,
-                                direction: "none",
-                                random: false,
-                                straight: false,
-                                out_mode: "out",
-                                bounce: false,
-                                attract: {
-                                    enable: false,
-                                    rotateX: 600,
-                                    rotateY: 1200
-                                }
-                            }
-                        },
-                        interactivity: {
-                            detect_on: "window",
-                            events: {
-                                onhover: {
-                                    enable: true,
-                                    mode: "grab"
-                                },
-                                onclick: {
-                                    enable: true,
-                                    mode: "push"
-                                },
-                                resize: true
-                            },
-                            modes: {
-                                grab: {
-                                    distance: 109,
-                                    line_linked: {
-                                        opacity: .51
-                                    }
-                                },
-                                bubble: {
-                                    distance: 400,
-                                    size: 40,
-                                    duration: 2,
-                                    opacity: 8,
-                                    speed: 3
-                                },
-                                repulse: {
-                                    distance: 200,
-                                    duration: 0.4
-                                },
-                                push: {
-                                    particles_nb: 4
-                                },
-                                remove: {
-                                    particles_nb: 2
-                                }
-                            }
-                        },
-                        retina_detect: true
-                    }}
+                    options={options}
                 />
             </div>
             <main className="dark:bg-gray-800 font-mono bg-white h-screen">
@@ -152,7 +145,7 @@ const Banner = () => {
                     <div className="container mx-auto px-6 flex flex-col justify-between items-center  py-4">
                         <div className="flex flex-col">
                             <img src={profileImage} className="z-20 rounded-full md:w-3/12 w-7/12 mx-auto" alt="profile" />
-                            <p className="text-3xl my-6 text-center dark:text-white md:block hidden">
+                            {/* <p className="text-3xl my-6 text-center dark:text-white md:block hidden">
                                 I am <TextTransition
                                     text={texts[index % texts.length]}
                                     springConfig={presets.wobbly}
@@ -160,8 +153,8 @@ const Banner = () => {
                                     direction="down"
                                     className="text-green-500"
                                 />
-                            </p>
-                            <span className="text-3xl my-6 text-center md:hidden ">
+                            </p> */}
+                            {/* <span className="text-3xl my-6 text-center md:hidden ">
                                 <p>I am</p>
                                 <TextTransition
                                     text={texts[index % texts.length]}
@@ -169,11 +162,18 @@ const Banner = () => {
                                     className={" overflow-x-hidden"}
                                     inline={true}
                                 />
-                            </span>
-                            <h2 className="max-w-3xl text-3xl md:text-6xl font-bold mx-auto dark:text-white text-gray-800 text-center py-2">
-                                <Fade left>
-                                    MERN Stack Developer
-                                </Fade>
+                            </span> */}
+                            <h2 className="max-w-3xl text-2xl md:text-6xl font-bold mx-auto dark:text-white text-center py-2">
+                                <div data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
+                                    <p className='text-gray-900'>I am</p>
+                                    <TextTransition
+                                        className="text-green-600"
+                                        text={texts[index % texts.length]}
+                                        direction="up"
+                                        noOverflow
+                                        inline
+                                    />
+                                </div>
                             </h2>
                             <div className="flex items-center justify-center mt-4">
                                 <a href={resume} target="_blank" rel="noreferrer"

@@ -57,12 +57,10 @@ const Contact = () => {
 
     return (
         <div id="contact">
-
-
             <div className="flex justify-around md:flex-row flex-col gap-4 my-5 md:my-9">
                 {/* address here */}
 
-                <div className="flex items-center justify-center px-5 py-5 w-full md:w-1/2">
+                <div className="flex items-center justify-center px-5 py-5 w-full md:w-1/2" data-aos="zoom-in-right" data-aos-easing="linear" data-aos-duration="800" data-aos-anchor-placement="bottom-bottom" >
                     <div className="w-full mx-auto max-w-xl rounded-lg bg-white dark:bg-gray-800 shadow-lg px-5 pt-5 pb-10 text-gray-800 dark:text-gray-50">
                         <div className="w-full pt-1 text-center pb-5 -mt-16 mx-auto">
                             <a href="/" className="block relative">
@@ -94,8 +92,7 @@ const Contact = () => {
                     </div>
                 </div>
                 {/* contact email here */}
-                <div className="flex items-center justify-center px-5 py-5 w-full md:w-1/2">
-
+                <div className="flex items-center justify-center px-5 py-5 w-full md:w-1/2" data-aos="zoom-in-left" data-aos-duration="800" data-aos-anchor-placement="bottom-bottom" >
                     <form class="flex max-w-xl space-x-3" ref={mainForm} onSubmit={sendMainEmail}>
                         <div class="w-full max-w-xl px-5 py-10 m-auto mt-10 bg-white rounded-lg shadow dark:bg-gray-800">
                             <div className="mb-6 text-3xl font-light text-center text-gray-800 dark:text-white">

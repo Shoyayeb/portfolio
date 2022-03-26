@@ -57,17 +57,17 @@ const Skills = () => {
     }, []);
 
     return (
-
-        <div id="skills">
-            <p className="max-w-3xl text-3xl md:text-6xl font-bold mx-auto dark:text-white text-gray-800 text-center py-2">Skills and Technologies</p>
-            <div className="bg-white dark:bg-gray-800 hidden md:flex justify-center items-center md:max-w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 ">
+        <div
+            id="skills">
+            <p className="max-w-3xl text-3xl md:text-6xl font-bold mx-auto dark:text-white text-gray-800 text-center py-2" data-aos="zoom-in-right" data-aos-easing="linear" data-aos-duration="800" data-aos-anchor-placement="bottom-bottom">Skills and Technologies</p>
+            <div className="bg-white dark:bg-gray-800 hidden md:flex justify-center items-center md:max-w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 " data-aos="zoom-in-left" data-aos-easing="linear" data-aos-duration="800" data-aos-anchor-placement="bottom-bottom">
                 <div className="md:max-w-1/2 hidden md:flex">
                     {allSkills.map((skill) => (
                         <img src={skill} className="w-10 h-8 cursor-pointer hover:shadow-sm" alt="skill" />
                     ))}
                 </div>
             </div>
-            <div>
+            <div data-aos="zoom-in-bottom" data-aos-easing="linear" data-aos-duration="800" data-aos-anchor-placement="bottom-bottom">
                 <p className="text-3xl my-6 text-center dark:text-white md:block hidden">
                     I am Expert at <TextTransition
                         text={skillText[index % skillText.length]}
@@ -86,7 +86,7 @@ const Skills = () => {
                 </p>
             </div>
             {/* freecodecamp */}
-            <section>
+            <section data-aos="zoom-in-bottom" data-aos-easing="linear" data-aos-duration="800">
                 <div className="container px-5 py-10 mx-auto">
                     <div className="text-center mb-20">
                         <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
