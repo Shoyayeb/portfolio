@@ -42,9 +42,9 @@ const Skills = () => {
         "Bootstrap",
         "JavaScript",
         "React",
+        "NextJS",
         "Node.js",
         "Express.js",
-        "NoSQL",
         "Firebase",
     ]
     const [index, setIndex] = React.useState(0);
@@ -90,9 +90,7 @@ const Skills = () => {
                 <div className="container px-5 py-10 mx-auto">
                     <div className="text-center mb-20">
                         <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi sit
-                            ipsa delectus eum quo voluptas aspernatur accusantium distinctio
-                            possimus est.
+                            Spent lots of sleepless night into learning. And I think that was not a waste because I'm confident at WHAT I am.
                         </p>
                     </div>
                     <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 mx-2">

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import TextTransition, { presets } from "react-text-transition";
+import TextTransition from "react-text-transition";
 import Particles from 'react-tsparticles';
 import resume from '../../extra-files/resume.pdf';
 import profileImage from '../../Images/profile-image.jpg';
@@ -141,28 +141,10 @@ const Banner = () => {
                 />
             </div>
             <main className="dark:bg-gray-800 font-mono bg-white h-screen">
-                <div className="flex  z-20 items-center">
+                <div className="flex z-20 items-center">
                     <div className="container mx-auto px-6 flex flex-col justify-between items-center  py-4">
                         <div className="flex flex-col">
                             <img src={profileImage} className="z-20 rounded-full md:w-3/12 w-7/12 mx-auto" alt="profile" />
-                            {/* <p className="text-3xl my-6 text-center dark:text-white md:block hidden">
-                                I am <TextTransition
-                                    text={texts[index % texts.length]}
-                                    springConfig={presets.wobbly}
-                                    inline={true}
-                                    direction="down"
-                                    className="text-green-500"
-                                />
-                            </p> */}
-                            {/* <span className="text-3xl my-6 text-center md:hidden ">
-                                <p>I am</p>
-                                <TextTransition
-                                    text={texts[index % texts.length]}
-                                    direction="down"
-                                    className={" overflow-x-hidden"}
-                                    inline={true}
-                                />
-                            </span> */}
                             <h2 className="max-w-3xl text-2xl md:text-6xl font-bold mx-auto dark:text-white text-center py-2">
                                 <div data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
                                     <p className='text-gray-900'>I am</p>
