@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 import Banner from './Components/Banner/Banner';
