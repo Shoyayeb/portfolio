@@ -1,20 +1,17 @@
 import { ChatAlt2Icon, ChatIcon } from '@heroicons/react/solid';
-import emailjs from 'emailjs-com';
 import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import profileImage from '../../Images/profile-image.jpg';
 
 const Contact = () => {
     const [open, setOpen] = useState(false)
     const openForm = () => {
-        console.log("hji");
-        console.log(open);
         if (open) {
             setOpen(false)
         } else if (open === false) {
             setOpen(true)
         }
     }
-
     const closeForm = () => {
         if (open) {
             setOpen(false)
@@ -22,21 +19,17 @@ const Contact = () => {
             setOpen(true)
         }
     }
-
     const mainForm = useRef();
     const form = useRef();
-
     const sendEmail = (e) => {
         e.preventDefault();
         console.log(form);
-
-        emailjs.sendForm('service_b2vznsg', 'template_tafc3lo', form.current, 'user_DUA2xgdZobdv6TP7oDsmS')
+        emailjs.sendForm("service_qoegqlk", "template_tafc3lo", form.current, "user_DUA2xgdZobdv6TP7oDsmS")
             .then((result) => {
                 console.log("result is" + result.text);
                 form.current.reset();
                 alert("Message Sent");
                 setOpen(false)
-
             }, (error) => {
                 console.log("error is" + error.text);
             });
@@ -45,7 +38,7 @@ const Contact = () => {
         e.preventDefault();
         console.log(mainForm);
 
-        emailjs.sendForm('service_b2vznsg', 'template_tafc3lo', mainForm.current, 'user_DUA2xgdZobdv6TP7oDsmS')
+        emailjs.sendForm('service_qoegqlk', 'template_tafc3lo', mainForm.current, 'user_DUA2xgdZobdv6TP7oDsmS')
             .then((result) => {
                 console.log("result is" + result.text);
                 mainForm.current.reset();

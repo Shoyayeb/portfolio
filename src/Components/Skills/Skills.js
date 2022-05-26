@@ -63,7 +63,7 @@ const Skills = () => {
             <div className="bg-white dark:bg-gray-800 hidden md:flex justify-center items-center md:max-w-1/2 py-12 px-4 sm:px-6 lg:py-16 lg:px-8 " data-aos="zoom-in-left" data-aos-easing="linear" data-aos-duration="800" data-aos-anchor-placement="bottom-bottom">
                 <div className="md:max-w-1/2 hidden md:flex">
                     {allSkills.map((skill) => (
-                        <img src={skill} className="w-10 h-8 cursor-pointer hover:shadow-sm" alt="skill" />
+                        <img key={skill} src={skill} className="w-10 h-8 cursor-pointer hover:shadow-sm" alt="skill" />
                     ))}
                 </div>
             </div>
